@@ -1,0 +1,12 @@
+<div class="card container mx-auto my-3">
+  <h1 class="text-center"><%= @article.title %></h1>
+  <p class="text-center"><%= @article.body %></p>
+  <% user = current_user %>
+  <p class="text-end">Créé par <%= user.pseudo %> le <%= @article.created_at %></p>
+</div>
+
+<div class="mx-auto text-center">
+  <%= link_to "Voir les articles", articles_path, class: "btn btn-dark" %>
+  <%= link_to "Nouvel article", new_article_path, class: "btn btn-dark" %>
+  <%= link_to "Modifier l'article", edit_article_path, class: "btn btn-dark" %>
+</div>

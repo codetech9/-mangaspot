@@ -1,0 +1,7 @@
+<%= simple_form_for(article) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <div>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<h1 class="text-center">Manga Spot</h1>
+
+<div class="container-fluid d-flex justify-content-between p-5">
+  <% @articles.each do |article| %>
+  <div class="card m-3">
+    <h2 class="text-center"><%= link_to article.title, article_path(article) %></h2>
+    <p class="text-center"><%= article.body %></p>
+  </div>
+  <% end %>
+</div>
