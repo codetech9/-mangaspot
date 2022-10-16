@@ -1,9 +1,29 @@
-<div class="card container mx-auto my-3">
-  <h1 class="text-center"><%= @article.title %></h1>
-  <p class="text-center"><%= @article.body %></p>
-  <% user = current_user %>
-  <p class="text-end">Créé par <%= user.pseudo %> le <%= @article.created_at %></p>
+
+<div class="card container mx-auto my-3" style="width: 36rem;">
+  <div class="card-body">
+    <h1 class="text-center"><%= @article.title %></h1>
+    <p class="text-center"><%= @article.body %></p>
+    <% user = @article.user %>
+    <p class="text-end">Auteur: <%= user.pseudo %> - Le: <%= @article.created_at %></p>
+  </div>
 </div>
+
+<div class="mx-auto container">
+  <%= form_for  [@article, @review]  do |f| %>
+    <%= f.text_field :body %>
+    <div class="text-center">
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+
+
+<ul class="list-group">
+  <% @article.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.body %></li>
+  <% end %>
+</ul>
+
 
 <div class="mx-auto text-center">
   <%= link_to "Voir les articles", articles_path, class: "btn btn-dark" %>

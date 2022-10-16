@@ -17,7 +17,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-
   end
 
   def show
@@ -36,6 +35,7 @@ class ArticlesController < ApplicationController
   def reviews
     @reviews = @article.reviews
   end
+
 
   private
 

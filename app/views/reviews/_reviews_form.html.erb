@@ -1,0 +1,9 @@
+
+<div class="mx-auto container">
+  <%= simple_form_for [:@article, :@review] do |f| %>
+    <%= f.input :body %>
+    <div class="text-center">
+      <%= f.submit "Submit review", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
